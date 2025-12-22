@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        branch: [unlimited, node]
+      fail-fast: false
+
+    env:
+      BRANCH: ${{ matrix.branch }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: .ruby-version
+
+      - name: Validate generated files are up to date
+        run: make validate
+
+      - name: Build and test Docker images
+        run: make test
+
+      - name: Show Docker images
+        run: docker images

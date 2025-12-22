@@ -1,6 +1,6 @@
 # Docker-Bitcoin
 
-[![Build Status](https://img.shields.io/travis/com/zquestz/docker-bitcoin.svg)](https://app.travis-ci.com/github/zquestz/docker-bitcoin)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/zquestz/docker-bitcoin/ci.yml?branch=master)](https://github.com/zquestz/docker-bitcoin/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/zquestz/docker-bitcoin.svg)](https://github.com/zquestz/docker-bitcoin/blob/master/LICENSE)
 
 Included in this repo are docker images for the main Bitcoin Cash full nodes. This includes Bitcoin Cash Node and Bitcoin Unlimited. A huge thanks to Adrian Macneil, and his now unmaintained original [repository](https://github.com/amacneil/docker-bitcoin), which provided the base for this repo.
