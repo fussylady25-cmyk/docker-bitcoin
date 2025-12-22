@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
 RUN groupadd -r bitcoin && useradd -r -m -g bitcoin bitcoin
 
@@ -7,9 +7,9 @@ RUN set -ex \
 	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu gpg wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV BITCOIN_VERSION 2.0.0.1
-ENV BITCOIN_URL https://www.bitcoinunlimited.info/downloads/bch-unlimited-2.0.0.1-linux64.tar.gz
-ENV BITCOIN_SHA256 243b393dc79134b8595cab21faada21ee9b57461bede948a25823248208bb32e
+ENV BITCOIN_VERSION=2.0.0.1
+ENV BITCOIN_URL=https://raw.githubusercontent.com/BitcoinUnlimited/BitcoinUnlimitedWebDownloads/master/bch-unlimited-2.0.0.1-linux64.tar.gz
+ENV BITCOIN_SHA256=243b393dc79134b8595cab21faada21ee9b57461bede948a25823248208bb32e
 
 # install bitcoin binaries
 RUN set -ex \
@@ -20,7 +20,7 @@ RUN set -ex \
 	&& rm -rf /tmp/*
 
 # create data directory
-ENV BITCOIN_DATA /data
+ENV BITCOIN_DATA=/data
 RUN mkdir "$BITCOIN_DATA" \
 	&& chown -R bitcoin:bitcoin "$BITCOIN_DATA" \
 	&& ln -sfn "$BITCOIN_DATA" /home/bitcoin/.bitcoin \

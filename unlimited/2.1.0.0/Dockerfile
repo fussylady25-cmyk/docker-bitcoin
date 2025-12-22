@@ -7,9 +7,9 @@ RUN set -ex \
 	&& apt-get install -qq --no-install-recommends ca-certificates dirmngr gosu gpg wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV BITCOIN_VERSION=28.0.0
-ENV BITCOIN_URL=https://github.com/bitcoin-cash-node/bitcoin-cash-node/releases/download/v28.0.0/bitcoin-cash-node-28.0.0-x86_64-linux-gnu.tar.gz
-ENV BITCOIN_SHA256=ba735cd3b70fab35ac1496e38596cec1f8d34989924376de001d4a86198f7158
+ENV BITCOIN_VERSION=2.1.0.0
+ENV BITCOIN_URL=https://raw.githubusercontent.com/BitcoinUnlimited/BitcoinUnlimitedWebDownloads/master/bch-unlimited-2.1.0.0-linux64.tar.gz
+ENV BITCOIN_SHA256=0274e17beeaa94fea2cade28a23c9e47ea4d2eb318a5ff4d883fdaa20750ae7c
 
 # install bitcoin binaries
 RUN set -ex \

@@ -14,6 +14,10 @@ node:
 
 unlimited:
   2.0.0.1:
-    url: https://www.bitcoinunlimited.info/downloads/bch-unlimited-2.0.0.1-linux64.tar.gz
+    url: https://raw.githubusercontent.com/BitcoinUnlimited/BitcoinUnlimitedWebDownloads/master/bch-unlimited-2.0.0.1-linux64.tar.gz
     sha256: 243b393dc79134b8595cab21faada21ee9b57461bede948a25823248208bb32e
     client_version: "v2.0.0.1"
+  2.1.0.0:
+    url: https://raw.githubusercontent.com/BitcoinUnlimited/BitcoinUnlimitedWebDownloads/master/bch-unlimited-2.1.0.0-linux64.tar.gz
+    sha256: 0274e17beeaa94fea2cade28a23c9e47ea4d2eb318a5ff4d883fdaa20750ae7c
+    client_version: "v2.1.0.0"
